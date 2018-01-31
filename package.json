@@ -1,0 +1,34 @@
+{
+  "name": "react-gantry",
+  "version": "1.0.0",
+  "description": "initial test",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RobotsAndPencils/react-gantry.git"
+  },
+  "keywords": [
+    "react",
+    "starter-kit"
+  ],
+  "author": "Robots & Pencils",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/RobotsAndPencils/react-gantry/issues"
+  },
+  "homepage": "https://github.com/RobotsAndPencils/react-gantry#readme",
+  "devDependencies": {
+    "babel": "^6.23.0",
+    "enzyme": "^3.3.0",
+    "jest": "^22.1.4",
+    "webpack": "^3.10.0",
+    "webpack-dev-server": "^2.11.1"
+  },
+  "dependencies": {
+    "react-css-modules": "^4.7.1",
+    "sass-resources-loader": "^1.3.1"
+  }
+}
