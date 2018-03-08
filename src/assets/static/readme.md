@@ -1,1 +1,0 @@
-Any other manner of asset that doesn't fit in the other files can live here.

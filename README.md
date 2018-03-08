@@ -39,40 +39,42 @@ Onboarded team members will then simply need to run `npm install` after cloning 
 ├── assets
 │   ├── fonts
 │   ├── images
-│   ├── static
 │   └── svg
 ├── components
-│   └── <component>
-│       ├── <component>.js
-│       └── <component>.test.js
+│   └── profile
+│       ├── profile.js
+│       ├── profile.scss
+│       └── profile.test.js
 ├── constants
-│   └── <name>Constants.js
+│   └── appConstants.js
 ├── containers
-│   └── <smart-component>
-│       ├── <smart-component>Container.js
-│       └── <smart-component>Container.test.js
+│   └── profile
+│       ├── profile-container.scss
+│       ├── profileContainer.js
+│       └── profileContainer.test.js
 ├── favicon.png
 ├── index.html
 ├── redux
 │   ├── rootReducer.js
 │   ├── store.js
-│   └── <duck>
-│       ├── <duck>Actions.js
-│       ├── <duck>Reducer.js
-│       └── <duck>Reducer.test.js
+│   └── user
+│       ├── userActions.js
+│       ├── userReducer.js
+│       └── userReducer.test.js
 ├── services
 │   ├── axios.js
-│   ├── <service>.js
-│   └── <service>.test.js
+│   ├── profile.js
+│   └── profile.test.js
 ├── styles
 │   ├── _variables.scss
 │   └── index.scss
 ├── utils
-│   ├── <util>.js
-│   └── <util>.test.js
+│   ├── phoneFormatter.js
+│   └── phoneFormatter.test.js
 └── views
-    └── <view>
-        └── <view>.js
+    └── home
+        ├── home.js
+        └── home.scss
 ```
 
 ## Available Scripts
