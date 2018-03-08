@@ -17,7 +17,9 @@ module.exports = {
           { // Enables CSS Modules and handles css's `@import` and `url()`s as if they were js imports (rewriting the url in the final css bundle)
             loader: 'css-loader',
             options: {
-              importLoaders: 2 // This will make both `sass-loader` and `postcss-loader` process any @imported css files before css-loader gets to them
+              modules: true, // Enables CSS Module Syntax
+              importLoaders: 2, // This will make both `sass-loader` and `postcss-loader` process any @imported css files before css-loader gets to them
+              sourceMap: true
             }
           },
           { // Autoprefixer has to be loaded in through the postcss-loader
