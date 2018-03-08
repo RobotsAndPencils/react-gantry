@@ -36,9 +36,43 @@ Onboarded team members will then simply need to run `npm install` after cloning 
 ## Directory Structure
 
 ```bash
-├── TBD                                         # TBD
-│   ├── tbd                                     # TBD
-
+├── assets
+│   ├── fonts
+│   ├── images
+│   ├── static
+│   └── svg
+├── components
+│   └── <component>
+│       ├── <component>.js
+│       └── <component>.test.js
+├── constants
+│   └── <name>Constants.js
+├── containers
+│   └── <smart-component>
+│       ├── <smart-component>Container.js
+│       └── <smart-component>Container.test.js
+├── favicon.png
+├── index.html
+├── redux
+│   ├── rootReducer.js
+│   ├── store.js
+│   └── <duck>
+│       ├── <duck>Actions.js
+│       ├── <duck>Reducer.js
+│       └── <duck>Reducer.test.js
+├── services
+│   ├── axios.js
+│   ├── <service>.js
+│   └── <service>.test.js
+├── styles
+│   ├── _variables.scss
+│   └── index.scss
+├── utils
+│   ├── <util>.js
+│   └── <util>.test.js
+└── views
+    └── <view>
+        └── <view>.js
 ```
 
 ## Available Scripts
