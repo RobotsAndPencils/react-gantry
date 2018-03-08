@@ -4,6 +4,8 @@
   "description": "initial test",
   "main": "index.js",
   "scripts": {
+    "start": "npx webpack --config config/webpack.config.dev.js --mode development",
+    "build": "npx webpack --config config/webpack.config.dev.js --mode production",
     "test": "test"
   },
   "repository": {
@@ -26,15 +28,19 @@
     "babel-eslint": "^8.2.1",
     "babel-jest": "^22.2.0",
     "babel-loader": "^7.1.2",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1",
     "css-loader": "^0.28.9",
     "enzyme": "^3.3.0",
     "extract-text-webpack-plugin": "^3.0.2",
+    "html-webpack-plugin": "^3.0.6",
     "jest": "^22.1.4",
     "redux-devtools-extension": "^2.13.2",
     "sass-loader": "^6.0.6",
     "standard": "^10.0.3",
     "url-loader": "^0.6.2",
-    "webpack": "^3.10.0",
+    "webpack": "^4.1.1",
+    "webpack-cli": "^2.0.10",
     "webpack-dev-server": "^2.11.1"
   },
   "dependencies": {
@@ -42,6 +48,7 @@
     "prop-types": "^15.6.0",
     "react": "^16.2.0",
     "react-css-modules": "^4.7.1",
+    "react-dom": "^16.2.0",
     "react-redux": "^5.0.6",
     "react-router-dom": "^4.2.2",
     "recompose": "^0.26.0",
