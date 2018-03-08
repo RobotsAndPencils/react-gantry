@@ -4,7 +4,7 @@
   "description": "initial test",
   "main": "index.js",
   "scripts": {
-    "start": "npx webpack --config config/webpack.config.dev.js --mode development",
+    "start": "webpack-dev-server --mode development --open --config config/webpack.config.dev.js",
     "build": "npx webpack --config config/webpack.config.dev.js --mode production",
     "test": "test"
   },
@@ -41,7 +41,7 @@
     "url-loader": "^0.6.2",
     "webpack": "^4.1.1",
     "webpack-cli": "^2.0.10",
-    "webpack-dev-server": "^2.11.1"
+    "webpack-dev-server": "^3.1.0"
   },
   "dependencies": {
     "axios": "^0.17.1",
