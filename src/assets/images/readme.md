@@ -1,0 +1,1 @@
+Images of all varieties co-exist here.

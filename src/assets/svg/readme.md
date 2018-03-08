@@ -1,0 +1,1 @@
+All manner of svgs big and small hang out here.
