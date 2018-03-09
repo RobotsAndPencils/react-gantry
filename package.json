@@ -4,8 +4,8 @@
   "description": "initial test",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --mode development --open --config config/webpack.config.dev.js",
-    "build": "npx webpack --config config/webpack.config.dev.js --mode production",
+    "start": "webpack-dev-server --mode development --open --config config/webpack.config.js",
+    "build": "npx webpack --config config/webpack.config.js --mode production",
     "test": "test"
   },
   "repository": {
