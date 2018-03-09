@@ -8,6 +8,29 @@ module.exports = {
         exclude: /node_modules/,
         loader: 'babel-loader'
       },
+      { // Will convert (png|jpg|gif) files under 10kb to a DataURL, otherwise uses the file-loader automatically
+        test: /\.(png|jpg|gif)$/,
+        use: [
+          {
+            loader: 'url-loader',
+            options: {
+              limit: 10000,
+              name: 'assets/images/[name].[ext]'
+            }
+          }
+        ]
+      },
+      { // Will use file-loader for (ttf|eot|woff|woff2)
+        test: /\.(ttf|eot|woff|woff2)$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: 'assets/fonts/[name].[ext]'
+            }
+          }
+        ]
+      },
       {
         test: /\.scss$/,
         use: [
@@ -38,7 +61,7 @@ module.exports = {
               sourceMap: true
             }
           },
-          {
+          { // Imports all of the contents of the resources directory into the start of every scss file in the project
             loader: 'sass-resources-loader',
             options: {
               resources: './src/styles/resources/*.scss'

@@ -1,5 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import './styles/index.scss'
 import HomeRoute from './views/home/home'
 
 ReactDOM.render(
