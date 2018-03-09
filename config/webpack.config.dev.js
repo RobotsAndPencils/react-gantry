@@ -18,7 +18,8 @@ module.exports = {
             loader: 'css-loader',
             options: {
               modules: true, // Enables CSS Module Syntax
-              importLoaders: 2, // This will make both `sass-loader` and `postcss-loader` process any @imported css files before css-loader gets to them
+              importLoaders: 3, // This will make both `sass-loader` and `postcss-loader` process any @imported css files before css-loader gets to them
+              localIdentName: '[name]__[local]', // This removes the hash at the end of the classname outputs.
               sourceMap: true
             }
           },
@@ -35,6 +36,12 @@ module.exports = {
             loader: 'sass-loader',
             options: {
               sourceMap: true
+            }
+          },
+          {
+            loader: 'sass-resources-loader',
+            options: {
+              resources: './src/styles/resources/*.scss'
             }
           }
         ]
