@@ -5,3 +5,12 @@
 .profile__profile {
   border: 1px solid red; }
 
+.profile__crown {
+  height: 1em;
+  display: inline-block; }
+
+.profile__crownBlue {
+  width: auto; }
+  .profile__crownBlue > path {
+    fill: blue !important; }
+
