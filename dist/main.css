@@ -5,24 +5,12 @@
 .profile-container__profile {
   border: 1px solid red; }
 
-.profile-container__profileCard {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row; }
-  .profile-container__profileCard figcaption {
-    -webkit-box-flex: 1;
-        -ms-flex-positive: 1;
-            flex-grow: 1; }
-
-.profile-container__profileIcon {
+.profile__crown {
   height: 1em;
-  margin-left: 0.5em;
   display: inline-block; }
 
-.avatar__avatar {
-  height: 4rem; }
+.profile__crownBlue {
+  width: auto; }
+  .profile__crownBlue > path {
+    fill: blue !important; }
 
