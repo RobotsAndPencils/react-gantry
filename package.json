@@ -6,7 +6,7 @@
   "scripts": {
     "start": "webpack-dev-server --mode development --open --config config/webpack.config.js",
     "dist": "npx webpack --config config/webpack.config.js --mode production",
-    "test": "test"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -33,8 +33,10 @@
     "babel-loader": "^7.1.2",
     "css-loader": "^0.28.9",
     "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
     "file-loader": "^1.1.11",
     "html-webpack-plugin": "^3.0.6",
+    "identity-obj-proxy": "^3.0.0",
     "jest": "^22.1.4",
     "mini-css-extract-plugin": "^0.2.0",
     "node-sass": "^4.7.2",
@@ -61,5 +63,18 @@
     "redux": "^3.7.2",
     "redux-form": "^7.2.3",
     "redux-thunk": "^2.2.0"
+  },
+  "standard": {
+    "env": [
+      "jest"
+    ]
+  },
+  "jest": {
+    "moduleNameMapper": {
+      "^.+\\.s?css$": "identity-obj-proxy"
+    },
+    "setupFiles": [
+      "<rootDir>/config/setupTests.js"
+    ]
   }
 }
