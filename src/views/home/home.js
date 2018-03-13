@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from './home.scss'
-import Profile from '../../components/profile/profile'
+import Profile from '../../containers/profile/profileContainer'
 
 class HomeRoute extends React.Component {
   render () {
