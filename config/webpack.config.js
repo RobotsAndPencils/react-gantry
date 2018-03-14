@@ -135,6 +135,9 @@ module.exports = (env, argv) => {
                   }
                 }
               ]
+            },
+            {
+              loader: 'react-svg-loader'
             }
           ]
         },
@@ -145,10 +148,7 @@ module.exports = (env, argv) => {
           test: /\.svg$/,
           oneOf: [
             {
-              resourceQuery: /inline/,
-              loader: 'react-svg-loader'
-            },
-            {
+              resourceQuery: /external/,
               use: [
                 {
                   loader: 'file-loader',

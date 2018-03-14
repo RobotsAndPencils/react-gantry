@@ -71,8 +71,16 @@
   },
   "jest": {
     "moduleNameMapper": {
-      "^.+\\.s?css$": "identity-obj-proxy"
+      "^.+\\.s?css$": "identity-obj-proxy",
+      "^.+\\.svg\\?external$": "<rootDir>/config/fileMock.js"
     },
+    "transform": {
+      "^.+\\.(js|jsx|mjs)$": "babel-jest",
+      "^(?!.*\\.(js|jsx|mjs|css|json)$)": "<rootDir>/config/fileTransform.js"
+    },
+    "transformIgnorePatterns": [
+      "[/\\\\]node_modules[/\\\\].+\\.(js|jsx|mjs)$"
+    ],
     "setupFiles": [
       "<rootDir>/config/setupTests.js"
     ]
