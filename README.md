@@ -80,7 +80,7 @@ Onboarded team members will then simply need to run `npm install` after cloning 
 ## Available Scripts
 
 * `npm run start` runs the app locally in development mode ...
-* `npm run build` builds the app for distribution to the `/dist` folder
+* `npm run dist` builds the app for distribution to the `/dist` folder
 * Update Gantry: (re)downloads this repo as an npm package and merges its package.json with this project's package.json
 * Install Robits: downloads `react-robits` as an npm repo and merges its package.json with this project's package.json
 * Update Robits: (re)downloads `react-robits` as an npm package and merges its package.json with this project's package.json
@@ -106,7 +106,7 @@ Webpack's config maps different `tests` to different loaders, where the tests de
 ```
 
 This will make the babel-loader handle all .js files. We have set up two presets in our __.babelrc__ file in the project root that tells babel _how_ to handle these files:
-* [react](https://babeljs.io/docs/plugins/preset-react/) - React's suggested preset that lets babel know how to treat the jsx inside our react components. It also handles flow types, but we're not messing with those.
+* [react](https://babeljs.io/docs/plugins/preset-react/) - React's suggested preset that lets babel know how to treat the jsx inside our react components.
 * [env](https://babeljs.io/docs/plugins/preset-env/) - This seems to just be _the_ plugin to have with a babel setup. React recommends it as well and it seems to be what drives babel's ability to transpile ES2016+ back down to what browsers can run.
 
 ### Images
