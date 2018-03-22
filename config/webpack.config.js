@@ -138,6 +138,9 @@ module.exports = (env, argv) => {
             }
           ]
         },
+        /* This will jump straight to the file loader for all .ttf, .eot, .woff, and .woff2 files.
+         * It pulling them into an `/assets/fonts` directory.
+         */
         {
           test: /\.(ttf|eot|woff|woff2)$/,
           use: [
