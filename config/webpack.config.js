@@ -138,28 +138,6 @@ module.exports = (env, argv) => {
             }
           ]
         },
-        /* This will jump straight to the file loader for all .ttf, .eot, .woff, and .woff2 files.
-         * It pulling them into an `/assets/fonts` directory.
-         */
-        {
-          test: /\.svg$/,
-          oneOf: [
-            {
-              resourceQuery: /inline/,
-              loader: 'react-svg-loader'
-            },
-            {
-              use: [
-                {
-                  loader: 'file-loader',
-                  options: {
-                    name: 'assets/svg/[name].[ext]'
-                  }
-                }
-              ]
-            }
-          ]
-        },
         {
           test: /\.(ttf|eot|woff|woff2)$/,
           use: [
