@@ -79,8 +79,8 @@ Onboarded team members will then simply need to run `npm install` after cloning 
 
 ## Available Scripts
 
-* Start: runs the app locally in development mode ...
-* Dist: builds the app for distribution to the `/dist` folder
+* `npm run start` runs the app locally in development mode ...
+* `npm run dist` builds the app for distribution to the `/dist` folder
 * Update Gantry: (re)downloads this repo as an npm package and merges its package.json with this project's package.json
 * Install Robits: downloads `react-robits` as an npm repo and merges its package.json with this project's package.json
 * Update Robits: (re)downloads `react-robits` as an npm package and merges its package.json with this project's package.json
@@ -89,3 +89,13 @@ Onboarded team members will then simply need to run `npm install` after cloning 
 ## Running Tests
 
 TBD
+
+## Webpack Configuration
+
+Gantry has a purposefully slimmer webpack configuration than some other starter kits to make it easier to extend without wondering what all of the individual loaders and plugins do, whether they're being used, or if they're even necessary. Some key points of our webpack configuration are below, see the TECH.md file for the full walkthrough.
+
+* JS is handled by babel, which is configured in the .babelrc file in the root of the project.
+* SCSS Modules with sass-resources-loader are pre-configured to use the `./styles/resources` directory to auto import the files there.
+* SCSS Modules is set up with source maps disabled for production mode.
+* Images are handled by the URL Loader, anything below 10KB is automatically converted to a DataURL.
+* Fonts are imported with the file loader.
