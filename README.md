@@ -98,4 +98,7 @@ Gantry has a purposefully slimmer webpack configuration than some other starter 
 * SCSS Modules with sass-resources-loader are pre-configured to use the `./styles/resources` directory to auto import the files there.
 * SCSS Modules is set up with source maps disabled for production mode.
 * Images are handled by the URL Loader, anything below 10KB is automatically converted to a DataURL.
+* SVG files are handled one of two ways
+  * If they are imported with `?inline` at the end of the file location string, they will be converted to inline svg react components.
+  * Otherwise they are imported as static files
 * Fonts are imported with the file loader.

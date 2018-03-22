@@ -114,6 +114,30 @@ module.exports = (env, argv) => {
             }
           ]
         },
+        /* This will conditionally load SVG files depending on if the import declaration
+         * has a resourceQuery of 'inline' in it. E.g. !import Something from './icon.svg?inline'
+         * react-svg-loader will convert the svg into a component with the svg inlined, while
+         * file-loader will treat it as if it were an external image.
+         */
+        {
+          test: /\.svg$/,
+          oneOf: [
+            {
+              resourceQuery: /inline/, // regex for the resourceQuery part of the file string
+              loader: 'react-svg-loader'
+            },
+            {
+              use: [
+                {
+                  loader: 'file-loader',
+                  options: {
+                    name: 'assets/svg/[name].[ext]'
+                  }
+                }
+              ]
+            }
+          ]
+        },
         /* This will jump straight to the file loader for all .ttf, .eot, .woff, and .woff2 files.
          * It pulling them into an `/assets/fonts` directory.
          */

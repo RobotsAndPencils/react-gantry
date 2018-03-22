@@ -36,6 +36,45 @@ This will make use of the [url-loader](https://github.com/webpack-contrib/url-lo
 * If the filesize is less than 10kb convert the asset into a DataURL and insert it into where the file was `require`d.
 * If the filesize is more than 10kb revert automatically to the [file-loader](https://github.com/webpack-contrib/file-loader), which will pull that asset into the `/dist` folder under an `/assets/images` directory. It will then change the url where it was `require`d to match the new location.
 
+### SVGs
+```js
+{
+  test: /\.svg$/,
+  oneOf: [
+    {
+      resourceQuery: /inline/,
+      loader: 'react-svg-loader'
+    },
+    {
+      use: [
+        {
+          loader: 'file-loader',
+          options: {
+            name: 'assets/svg/[name].[ext]'
+          }
+        }
+      ]
+    }
+  ]
+},
+```
+We have set webpack up to handle SVG files in one of two ways via webpack's [oneOf](https://webpack.js.org/configuration/module/#rule-oneof). By default it assumes all svgs are loaded in as external resources, for example in an `<img/>`, and thus use the standard file-loader. However, if an SVG is imported with a [resourceQuery](https://webpack.js.org/configuration/module/#rule-resourcequery) of `?inline`, it will instead use the [react-svg-loader](https://github.com/boopathi/react-svg-loader/tree/master/packages/react-svg-loader) to convert those svgs into inline React Components that can be used as such. React SVG Loader will also run [SVGO](https://github.com/svg/svgo) with default settings on the SVG before inlining it.
+
+#### Example SVG imports
+
+```js
+import crown from '../../assets/svg/crown.svg' // Will use the file loader
+import Crown from '../../assets/svg/crown.svg?inline' // Will create a <Crown /> react component
+// ...
+
+<Crown className={styles.crownBlue} /> // applies the className to the <svg> element and can thus manipulate the contents
+<img src={crown} className={styles.crown} /> // applies the className to an <img> element, cannot manipulate the contents
+```
+
+#### Why React-SVG-Loader?
+
+There are a lot of options for loaders that do what react-svg-loader does, some other popular ones include webpack-contrib's [svg-inline-loader](https://github.com/webpack-contrib/svg-inline-loader) and the confusingly similar [svg-react-loader](https://github.com/jhamlet/svg-react-loader). However, out of the three big names, we think react-svg-loader has the healthiest support cycle and the use of SVGO automatically without the need for another loader is valuable.
+
 ### Fonts
 ```js
 {
