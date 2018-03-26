@@ -15,7 +15,7 @@ export class Profile extends React.Component {
           <figcaption>
             {this.props.name}
             <Gear className={styles.profileIcon} />
-            <img src={gearSrc} />
+            <img src={gearSrc} className={styles.profileIcon} />
           </figcaption>
           <Avatar name={this.props.name} />
           <Avatar name={this.props.name} set={2} />
