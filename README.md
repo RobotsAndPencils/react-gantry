@@ -102,3 +102,9 @@ Gantry has a purposefully slimmer webpack configuration than some other starter 
   * If they are imported with `?inline` at the end of the file location string, they will be converted to inline svg react components.
   * Otherwise they are imported as static files
 * Fonts are imported with the file loader.
+
+## Testing Configuration
+
+We have [Jest](https://facebook.github.io/jest/) and [Enzyme](http://airbnb.io/enzyme/) set up to run tests. By and large we have the default configuration for both of these.
+
+However, since we are importing SVG files as react components, and SCSS as an object, we need to configure Jest and Enzyme a little to prevent it from trying to run this markup as javascript in our tests. We accomplish this with the [moduleNameMapper](https://facebook.github.io/jest/docs/en/configuration.html#modulenamemapper-object-string-string) and [transform](https://facebook.github.io/jest/docs/en/configuration.html#transform-object-string-string) config options. For more details check the TECH.md file.
