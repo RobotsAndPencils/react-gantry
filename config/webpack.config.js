@@ -87,6 +87,9 @@ module.exports = (env, argv) => {
   }
 
   return {
+    output: {
+      publicPath: '/'
+    },
     module: {
       rules: [
         /* This will make the babel-loader handle all .js files. We have set up two presets in
@@ -161,6 +164,9 @@ module.exports = (env, argv) => {
         }
       ]
     },
-    plugins: plugins
+    plugins: plugins,
+    devServer: {
+      historyApiFallback: true
+    }
   }
 }
