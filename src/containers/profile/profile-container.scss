@@ -1,0 +1,16 @@
+.profile {
+  border: 1px solid red;
+}
+
+.profileCard {
+  display: flex;
+  flex-direction: row;
+  figcaption {
+    flex-grow: 1;
+  }
+}
+.profileIcon {
+  height: 1em;
+  margin-left: 0.5em;
+  display: inline-block;
+}
