@@ -99,8 +99,8 @@ Gantry has a purposefully slimmer webpack configuration than some other starter 
 * SCSS Modules is set up with source maps disabled for production mode.
 * Images are handled by the URL Loader, anything below 10KB is automatically converted to a DataURL.
 * SVG files are handled one of two ways
-  * If they are imported with `?inline` at the end of the file location string, they will be converted to inline svg react components.
-  * Otherwise they are imported as static files
+  * If they are imported with `?external` at the end of the file location string, they are imported as static files.
+  * Otherwise they will be converted to inline svg react components.
 * Fonts are imported with the file loader.
 
 ## Testing Configuration
