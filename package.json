@@ -6,7 +6,7 @@
   "scripts": {
     "start": "webpack-dev-server --mode development --open --config config/webpack.config.js",
     "dist": "npx webpack --config config/webpack.config.js --mode production",
-    "test": "jest"
+    "test": "standard && jest"
   },
   "repository": {
     "type": "git",
