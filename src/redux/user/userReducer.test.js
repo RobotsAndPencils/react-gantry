@@ -13,7 +13,9 @@ describe('types', () => {
 
 describe('reducer', () => {
   it('should reduce randomName', () => {
-    const randomState = reducer({}, actionCreators.randomName())
-    expect(names.includes(randomState.name)).toBe(true)
+    const randomName = actionCreators.randomName()
+    const initialState = {}
+    const result = reducer(initialState, randomName)
+    expect(names.includes(result.name)).toBe(true)
   })
 })

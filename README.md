@@ -108,3 +108,60 @@ Gantry has a purposefully slimmer webpack configuration than some other starter 
 We have [Jest](https://facebook.github.io/jest/) and [Enzyme](http://airbnb.io/enzyme/) set up to run tests. By and large we have the default configuration for both of these.
 
 However, since we are importing SVG files as react components, and SCSS as an object, we need to configure Jest and Enzyme a little to prevent it from trying to run this markup as javascript in our tests. We accomplish this with the [moduleNameMapper](https://facebook.github.io/jest/docs/en/configuration.html#modulenamemapper-object-string-string) and [transform](https://facebook.github.io/jest/docs/en/configuration.html#transform-object-string-string) config options. For more details check the TECH.md file.
+
+## Hygen
+Gantry has [hygen](http://www.hygen.io/quick-start) generators configured for all of the majorly repetative items one would add while making a site.
+
+__To get started,__ you will need to `npm install -g hygen`.
+
+### Component generator
+```
+hygen component new --name <name> --functional?
+```
+Produces the following files:
+```
+└── components
+    └── <name>
+        ├── <name>.js
+        ├── <name>.scss
+        └── <name>.test.js
+```
+Adding the optional `--functional` flag will create a basic functional component instead of a class based one.
+
+### Container generator
+```
+hygen container new --name <name> --document? --duck? <duck> --functional?
+```
+Produces the following files:
+```
+└── containers
+    └── <name>
+        ├── <name>Container.js
+        ├── <name>-container.scss
+        └── <name>Container.test.js
+```
+Adding the optional `--functional` flag will create a basic functional component instead of a class based one.
+Adding the optional `--document` flag will add some JSDoc comments to the container file itself.
+Adding the optional `--duck` flag will import the actionCreators from that duck automatically.
+
+### Duck Generator
+```
+hygen duck new --name <name> --dummy? --document?
+```
+Produces the following files:
+```
+└── redux
+    └── <name>
+        ├── index.js
+        ├── <name>Actions.js
+        ├── <name>Reducer.test.js
+        └── <name>Reducer.js
+```
+Adding the `--dummy` flag will fill in the files with a dummy duck's examples.
+Adding the `--document` flag will add some documentation to each produced file detailing it's purpose.
+
+```
+hygen duck newAction --name <name> --duck <duck>
+```
+Injects all of the parts of a new ActionCreator, Reducer, and Type into the provided `--duck`.
+
