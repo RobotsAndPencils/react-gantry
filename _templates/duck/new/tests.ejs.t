@@ -29,7 +29,6 @@ describe('<%= h.inflection.humanize(name) %> Reducer', () => {
       quacking: false
     }
     const result = reducer(initialState, quack)
-
     expect(result).toEqual({
       quacking: true
     })
