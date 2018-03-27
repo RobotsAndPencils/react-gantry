@@ -136,8 +136,9 @@ Produces the following files:
 ```
 └── containers
     └── <name>
-        ├── <name>.js
-        └── <name>.test.js
+        ├── <name>Container.js
+        ├── <name>-container.scss
+        └── <name>Container.test.js
 ```
 Adding the optional `--functional` flag will create a basic functional component instead of a class based one.
 Adding the optional `--document` flag will add some JSDoc comments to the container file itself.
