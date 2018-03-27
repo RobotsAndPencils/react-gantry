@@ -112,6 +112,8 @@ However, since we are importing SVG files as react components, and SCSS as an ob
 ## Hygen
 Gantry has [hygen](http://www.hygen.io/quick-start) generators configured for all of the majorly repetative items one would add while making a site.
 
+__To get started,__ you will need to `npm install -g hygen`.
+
 ### Component generator
 ```
 hygen component new --name <name> --functional?
