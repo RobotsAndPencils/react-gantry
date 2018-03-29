@@ -1,7 +1,8 @@
 import React from 'react'
 import {connect} from 'react-redux'
+import { bindActionCreators } from 'redux'
 import PropTypes from 'prop-types'
-import {actionCreators} from '../../redux/user'
+import * as userActions from '../../redux/user/userActions'
 import styles from './profile-container.scss'
 import Avatar from '../../components/avatar/avatar'
 import Gear from '../../assets/svg/repairing-service.svg'
@@ -21,7 +22,7 @@ export class Profile extends React.Component {
           <Avatar name={this.props.name} set={2} />
           <Avatar name={this.props.name} set={3} />
         </figure>
-        <button onClick={this.props.randomName}>Give me a Name!</button>
+        <button onClick={() => this.props.actions.randomName()}>Give me a Name!</button>
       </div>
     )
   }
@@ -29,7 +30,7 @@ export class Profile extends React.Component {
 
 Profile.propTypes = {
   name: PropTypes.string,
-  randomName: PropTypes.func
+  actions: PropTypes.object
 }
 
 const mapStateToProps = (state, ownProps) => ({
@@ -37,7 +38,7 @@ const mapStateToProps = (state, ownProps) => ({
 })
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
-  randomName: () => dispatch(actionCreators.randomName())
+  actions: bindActionCreators({ ...userActions }, dispatch)
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Profile)

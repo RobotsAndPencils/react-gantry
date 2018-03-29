@@ -1,11 +1,18 @@
-import {createStore} from 'redux'
+import { createStore, applyMiddleware, compose } from 'redux'
 import rootReducer from './rootReducer'
+import thunk from 'redux-thunk'
 
 const configureStore = () => {
+  const middlewares = [thunk] // to allow easy expansion
+  const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
+  const initialState = {} // Initial State is handled by the individual reducers, but we could hydrate it here (i.e. from localStorage)
+
   return createStore(
     rootReducer,
-    {}, // Initial State is handled by the individual reducers, but we could hydrate it here (i.e. from localStorage)
-    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__() // This only works without any other middleware. https://github.com/zalmoxisus/redux-devtools-extension#11-basic-store
+    initialState,
+    composeEnhancers( // to allow easy expansion
+      applyMiddleware(...middlewares)
+    )
   )
 }
 
