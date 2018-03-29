@@ -1,5 +1,5 @@
-import { getSkillsData } from '../../services/profile'
-import sampleNames from '../../constants/nameConstants'
+// import { getSkillsData } from '../../services/profile'
+import { sampleNames, sampleSkills } from '../../../testing/stubs'
 
 /* Action Type Constants */
 
@@ -24,15 +24,20 @@ export const randomName = () => {
 
 // action with axios and thunk
 export const getSkills = () => {
-  const request = getSkillsData()
+  // const request = getSkillsData()
+  const request = new Promise((resolve, reject) => resolve(sampleSkills)) // demo return for the above commented out real code
 
   return (dispatch) => {
     return new Promise(function (resolve, reject) {
       request.then((skillsReturn) => {
+        // the purpose of Thunks: parse the data before dispatching
+        const skills = skillsReturn.data
+        skills.push('React')
+
         // send to reducers
         dispatch({
           type: types.GET_SKILLS,
-          payload: skillsReturn
+          payload: skillsReturn.data
         })
 
         // send back to calling component

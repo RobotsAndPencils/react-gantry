@@ -17,5 +17,11 @@ export default createReducer(initialState, {
       ...state,
       name: action.payload
     }
+  },
+  [types.GET_SKILLS]: (state, action) => {
+    return {
+      ...state,
+      skills: action.payload
+    }
   }
 })

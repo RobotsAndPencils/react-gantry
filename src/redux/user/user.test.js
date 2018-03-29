@@ -1,5 +1,5 @@
 import * as userActions from './userActions'
-import sampleNames from '../../constants/nameConstants'
+import { sampleNames, sampleSkills } from '../../../testing/stubs'
 import { mockStore, axiosMock } from '../../../testing/mocks'
 
 describe('generic action test', () => {
@@ -9,18 +9,11 @@ describe('generic action test', () => {
 })
 
 describe('axios/thunk action test', () => {
-  it('should ensure React is a skill', () => {
-    axiosMock.onGet('/api/profile/skills').reply(200, {
-      skills: [
-        'html',
-        'js',
-        'css',
-        'React'
-      ]
-    })
+  it('should ensure CSS is a skill', () => {
+    axiosMock.onGet('/api/profile/skills').reply(200, sampleSkills.data)
 
     return mockStore.dispatch(userActions.getSkills()).then(() => {
-      expect(mockStore.getActions()[0].payload.data.skills).toContain('React')
+      expect(mockStore.getActions()[0].payload).toContain('css')
     })
   })
 })

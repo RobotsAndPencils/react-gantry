@@ -9,6 +9,13 @@ import Gear from '../../assets/svg/repairing-service.svg'
 import gearSrc from '../../assets/svg/repairing-service.svg?external'
 
 export class Profile extends React.Component {
+  componentWillMount () {
+    if (this.props.actions) {
+      this.props.actions.randomName()
+      this.props.actions.getSkills()
+    }
+  }
+
   render () {
     return (
       <div className={styles.profile}>
@@ -23,18 +30,31 @@ export class Profile extends React.Component {
           <Avatar name={this.props.name} set={3} />
         </figure>
         <button onClick={() => this.props.actions.randomName()}>Give me a Name!</button>
+        <h2>Skills</h2>
+        {
+          this.props.skills.map((skill) => {
+            return skill.toUpperCase()
+          }).join(', ')
+        }
       </div>
     )
   }
 }
 
+Profile.defaultProps = {
+  skills: [],
+  name: ''
+}
+
 Profile.propTypes = {
   name: PropTypes.string,
+  skills: PropTypes.array,
   actions: PropTypes.object
 }
 
 const mapStateToProps = (state, ownProps) => ({
-  name: state.user.name
+  name: state.user.name,
+  skills: state.user.skills
 })
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
