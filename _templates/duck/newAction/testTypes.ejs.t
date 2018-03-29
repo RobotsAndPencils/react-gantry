@@ -7,7 +7,7 @@ skip_if: it\('should create <%= h.inflection.camelize(name, true) %> action'
   it('should create <%= h.inflection.camelize(name, true) %> action', () => {
     expect(actionCreators.<%= h.inflection.camelize(name, true) %>())
       .toEqual({
-        type: types.<%= h.inflection.underscore(name, true) %>,
+        type: types.<%= h.inflection.underscore(name).toUpperCase() %>,
         payload: undefined
       })
   })

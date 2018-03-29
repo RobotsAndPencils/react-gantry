@@ -21,7 +21,7 @@ describe('types', () => {
 <% } -%>
 })
 
-describe('<%= h.inflection.humanize(name) %> Reducer', () => {
+describe('<%= h.inflection.titleize(h.inflection.humanize(h.inflection.underscore(name))) %> Reducer', () => {
 <% if(locals.dummy){ -%>
   it('should reduce quack', () => {
     const quack = actionCreators.quack(true)

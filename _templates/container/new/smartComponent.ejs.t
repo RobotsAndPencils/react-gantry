@@ -13,7 +13,7 @@ import {actionCreators} from '../../redux/<%= duck %>'
 <% }else{ -%>
 import {actionCreators} from '../../redux/duck'
 <% } -%>
-import styles from './<%= h.inflection.dasherize(name) %>-container.scss'
+import styles from './<%= h.inflection.dasherize(h.inflection.underscore(name)) %>-container.scss'
 
 <% if(locals.functional){ -%>
 function <%= h.inflection.camelize(name) %> (props) {
