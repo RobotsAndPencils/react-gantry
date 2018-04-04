@@ -8,8 +8,7 @@ import Gear from '../../assets/svg/repairing-service.svg'
 import gearSrc from '../../assets/svg/repairing-service.svg?external'
 
 export class Profile extends React.Component {
-  getProfileDetails () {
-    // Without 'this' bound to Profile, we'd try to get this.props from whatever calls this function. Which would be "<button>" later down the road.
+  getProfileDetails = () => {
     this.props.randomName()
     this.props.getSkills()
   }
@@ -31,7 +30,7 @@ export class Profile extends React.Component {
           <Avatar name={this.props.name} set={2} />
           <Avatar name={this.props.name} set={3} />
         </figure>
-        <button onClick={() => this.getProfileDetails()}>Give me a Name!</button>
+        <button onClick={this.getProfileDetails}>Give me a Name!</button>
         <h2>Skills</h2>
         {
           this.props.skills.map((skill) => {
