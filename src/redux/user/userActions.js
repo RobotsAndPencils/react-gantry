@@ -50,7 +50,7 @@ const getSkills = () => {
   }
 }
 
-export const actionCreators = {
+export default {
   randomName,
   getSkills
 }

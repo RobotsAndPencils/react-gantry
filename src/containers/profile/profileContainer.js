@@ -1,7 +1,7 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import PropTypes from 'prop-types'
-import {actionCreators as userActions} from '../../redux/user/userActions'
+import userActions from '../../redux/user/userActions'
 import styles from './profile-container.scss'
 import Avatar from '../../components/avatar/avatar'
 import Gear from '../../assets/svg/repairing-service.svg'
