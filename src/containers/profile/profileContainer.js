@@ -8,13 +8,6 @@ import Gear from '../../assets/svg/repairing-service.svg'
 import gearSrc from '../../assets/svg/repairing-service.svg?external'
 
 export class Profile extends React.Component {
-  constructor (props) {
-    super(props)
-    // We need to bind 'this' because we're using it in the 'getProfileDetails' function with the understanding that our 'Profile' component is 'this'
-    // This is the most performant way to bind 'this' in a react class without additional babel transforms.
-    this.getProfileDetails = this.getProfileDetails.bind(this)
-  }
-
   getProfileDetails () {
     // Without 'this' bound to Profile, we'd try to get this.props from whatever calls this function. Which would be "<button>" later down the road.
     this.props.randomName()
@@ -38,7 +31,7 @@ export class Profile extends React.Component {
           <Avatar name={this.props.name} set={2} />
           <Avatar name={this.props.name} set={3} />
         </figure>
-        <button onClick={this.getProfileDetails}>Give me a Name!</button>
+        <button onClick={() => this.getProfileDetails()}>Give me a Name!</button>
         <h2>Skills</h2>
         {
           this.props.skills.map((skill) => {
