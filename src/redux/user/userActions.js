@@ -14,7 +14,7 @@ export const types = {
 /* Action Creators */
 
 // generic action
-export const randomName = () => {
+const randomName = () => {
   const randomNameNumber = Math.floor(Math.random() * sampleNames.length)
   return {
     type: types.RANDOM_NAME,
@@ -23,7 +23,7 @@ export const randomName = () => {
 }
 
 // action with axios and thunk
-export const getSkills = () => {
+const getSkills = () => {
   // const request = getSkillsData()
   const request = new Promise((resolve, reject) => resolve(sampleSkills)) // demo return for the above commented out real code
 
@@ -48,4 +48,9 @@ export const getSkills = () => {
       })
     })
   }
+}
+
+export const actionCreators = {
+  randomName,
+  getSkills
 }
