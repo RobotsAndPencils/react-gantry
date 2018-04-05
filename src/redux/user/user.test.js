@@ -1,4 +1,4 @@
-import * as userActions from './userActions'
+import userActions from './userActions'
 import { sampleNames, sampleSkills } from '../../../testing/stubs'
 import { mockStore, axiosMock } from '../../../testing/mocks'
 

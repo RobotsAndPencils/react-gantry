@@ -49,3 +49,8 @@ export const getSkills = () => {
     })
   }
 }
+
+export default {
+  randomName,
+  getSkills
+}
