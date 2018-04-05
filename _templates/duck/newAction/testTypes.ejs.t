@@ -1,6 +1,6 @@
 ---
 inject: true
-to: src/redux/<%= h.inflection.camelize(duck, true) %>/<%= h.inflection.camelize(duck, true) %>.test.js
+to: "<%= locals.thunk ? null : 'src/redux/' + h.inflection.camelize(duck, true) + '/' + h.inflection.camelize(duck, true) + '.test.js' %>"
 after: describe\('<%= h.inflection.titleize(h.inflection.humanize(h.inflection.underscore(duck))) %> types'
 skip_if: it\('should create <%= h.inflection.camelize(name, true) %> action'
 ---

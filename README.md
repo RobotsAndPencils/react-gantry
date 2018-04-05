@@ -148,16 +148,18 @@ Produces the following files:
 ```
 └── redux
     └── <name>
-        ├── index.js
+        ├── <name>.test.js
         ├── <name>Actions.js
-        ├── <name>Reducer.test.js
         └── <name>Reducer.js
 ```
 Adding the `--dummy` flag will fill in the files with a dummy duck's examples.
 Adding the `--document` flag will add some documentation to each produced file detailing it's purpose.
 
 ```
-hygen duck newAction --name <name> --duck <duck>
+hygen duck newAction --name <name> --duck <duck> --thunk? --promise? --document?
 ```
 Injects all of the parts of a new ActionCreator, Reducer, and Type into the provided `--duck`.
 
+Adding the `--thunk` and `--promise` flags will create a Thunk that returns a promise
+Adding the `--thunk` flag will create a simple Thunk
+Adding the optional `--document` flag will add some comments in the thunks.
