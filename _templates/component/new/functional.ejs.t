@@ -4,7 +4,7 @@ to: "<%= locals.functional ? 'src/components/' + h.inflection.camelize(name, tru
 
 import React from 'react'
 import PropTypes from 'prop-types'
-import styles from './<%= h.inflection.dasherize(name) %>.scss'
+import styles from './<%= h.inflection.dasherize(h.inflection.underscore(name)) %>.scss'
 
 function <%= h.inflection.camelize(name) %> (props) {
   return (

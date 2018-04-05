@@ -4,7 +4,7 @@ to: "<%= locals.functional ? null : 'src/components/' + h.inflection.camelize(na
 
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import styles from './<%= h.inflection.dasherize(name) %>.scss'
+import styles from './<%= h.inflection.dasherize(h.inflection.underscore(name)) %>.scss'
 
 class <%= h.inflection.camelize(name) %> extends Component {
   render () {
