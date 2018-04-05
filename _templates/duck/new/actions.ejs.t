@@ -3,8 +3,9 @@ to: src/redux/<%= h.inflection.camelize(name, true) %>/<%= h.inflection.camelize
 ---
 <% if(locals.document){ -%>
 /* ACTION TYPE CONSTANTS
-You can use any convention you wish here, but the name should remain UPPER_SNAKE_CASE for consistency.
-*/
+ * You can use any convention you wish here, but the name should remain UPPER_SNAKE_CASE for consistency.
+ * We recommend <appName>/<duckName>/ACTION_NAME
+ */
 <% } -%>
 <% if(locals.dummy){ -%>
 const QUACK = 'exampleApp/<%= h.inflection.camelize(name, true) %>/QUACK'
@@ -18,18 +19,18 @@ export const types = {
 
 <% if(locals.document){ -%>
 /* ACTION CREATOR FUNCTIONS
-Put here the functions that return an action object that can be dispatched
-HINT: Always use functions for consistency, don't export plain objects
-*/
+ * Put here the functions that return an action object that can be dispatched
+ * HINT: Always use functions for consistency, don't export plain objects
+ */
 <% } -%>
 <% if(locals.dummy){ -%>
-const quack = (payload) => ({
+export const quack = (payload) => ({
   type: types.QUACK,
   payload: payload
 })
 
 <% } -%>
-export const actionCreators = {
+export default {
 <% if(locals.dummy){ -%>
   quack
 <% } -%>
