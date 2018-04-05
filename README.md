@@ -41,10 +41,10 @@ Onboarded team members will then simply need to run `npm install` after cloning 
 │   ├── images
 │   └── svg
 ├── components
-│   └── profile
-│       ├── profile.js
-│       ├── profile.scss
-│       └── profile.test.js
+│   └── avatar
+│       ├── avatar.js
+│       ├── avatar.scss
+│       └── avatar.test.js
 ├── constants
 │   └── appConstants.js
 ├── containers
@@ -60,15 +60,15 @@ Onboarded team members will then simply need to run `npm install` after cloning 
 │   └── user
 │       ├── userActions.js
 │       ├── userReducer.js
-│       └── userReducer.test.js
+│       └── user.test.js
 ├── services
-│   ├── axios.js
+│   ├── axiosInstance.js
 │   ├── profile.js
-│   └── profile.test.js
 ├── styles
 │   ├── _variables.scss
 │   └── index.scss
 ├── utils
+│   ├── createReducer.js
 │   ├── phoneFormatter.js
 │   └── phoneFormatter.test.js
 └── views
@@ -81,14 +81,10 @@ Onboarded team members will then simply need to run `npm install` after cloning 
 
 * `npm run start` runs the app locally in development mode ...
 * `npm run dist` builds the app for distribution to the `/dist` folder
+* `npm run test` kicks off Jest
 * Update Gantry: (re)downloads this repo as an npm package and merges its package.json with this project's package.json
 * Install Robits: downloads `react-robits` as an npm repo and merges its package.json with this project's package.json
 * Update Robits: (re)downloads `react-robits` as an npm package and merges its package.json with this project's package.json
-* Test: launces the test runner
-
-## Running Tests
-
-TBD
 
 ## Webpack Configuration
 

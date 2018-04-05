@@ -1,3 +1,5 @@
-export default (input) => {
-  return input
+import {axiosPublicInstance} from './axiosInstance'
+
+export function getSkillsData () {
+  return axiosPublicInstance.get('/profile/skills')
 }

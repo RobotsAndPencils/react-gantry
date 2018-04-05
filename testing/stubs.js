@@ -1,4 +1,6 @@
-const sampleNames = [
+// data stubs
+
+export const sampleNames = [
   'Bolt',
   'Jin',
   'Micro',
@@ -13,4 +15,10 @@ const sampleNames = [
   'As'
 ]
 
-export default sampleNames
+export const sampleSkills = {
+  data: [
+    'html',
+    'js',
+    'css'
+  ]
+}

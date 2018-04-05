@@ -1,5 +1,5 @@
+import createReducer from '../../utils/createReducer'
 import {types} from './userActions'
-import sampleNames from '../../constants/nameConstants'
 
 /* State Shape
 {
@@ -11,15 +11,17 @@ const initialState = {
   name: ''
 }
 
-export const userReducer = (state = initialState, action) => {
-  switch (action.type) {
-    case types.RANDOM_NAME:
-      const randomNameNumber = Math.floor(Math.random() * sampleNames.length)
-      return {
-        ...state,
-        name: sampleNames[randomNameNumber]
-      }
-    default:
-      return state
+export default createReducer(initialState, {
+  [types.RANDOM_NAME]: (state, action) => {
+    return {
+      ...state,
+      name: action.payload
+    }
+  },
+  [types.GET_SKILLS]: (state, action) => {
+    return {
+      ...state,
+      skills: action.payload
+    }
   }
-}
+})
