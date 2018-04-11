@@ -1,25 +1,25 @@
 <h1>
   React Gantry <img align="right" width="300" src="gantry.png"> 
 </h1>
-An opinionated React starter kit, by the Frontend Team at Robots & Pencils, in an attempt to better align our architecture and technology stacks to a common thread across all projects, so we can increase effeciencies in knowledge sharing and drive by help.
+An opinionated React starter kit, by the Frontend Team at Robots & Pencils, in an attempt to better align our architecture and technology stacks to a common thread across all projects, so we can increase efficiencies in knowledge sharing and drive by help.
 
 ###### A note about Robits:
 TBD
 
 ## Features
 
-We've tried to create strong opinions around the heavy lifters, while keeping it strictly to the essentials. This repo encompasses only we believe should be the foundation of every React project, allowing the project wrapper to tack on more unique necessaties.
+We've tried to create strong opinions around the heavy lifters, while keeping it strictly to the essentials. This repo encompasses only we believe should be the foundation of every React project, allowing the project wrapper to tack on more unique necessities.
 
 ###### Heavy Lifters =
-* Bundler: Webpack
-* Local Server: Webpack Dev Server
-* Data Management: Redux
-* Router: React Router 4
-* Forms: Redux Forms
-* Linting: TBD
-* Testing: Jest + Enzyme
-* JS Compiler: Babel
-* CSS: React CSS Modules (as SASS) + Sass Resources Loader
+* Bundler: [Webpack 4](https://webpack.js.org/)
+* Local Server: [Webpack Dev Server](https://github.com/webpack/webpack-dev-server)
+* Data Management: [Redux](https://redux.js.org/)
+* Router: [React Router 4 (web)](https://reacttraining.com/react-router/web/guides/philosophy)
+* Forms: [Redux Form 7+](https://redux-form.com/7.3.0/docs/gettingstarted.md/)
+* Linting: [Standard js](https://standardjs.com/)
+* Testing: [Jest](https://facebook.github.io/jest/) + [Enzyme](https://github.com/airbnb/enzyme)
+* JS Compiler: [Babel 7](https://github.com/babel/babel)
+* CSS: [CSS Modules](https://github.com/css-modules/css-modules) (as [SCSS](https://sass-lang.com/)) + [Sass Resources Loader](https://github.com/shakacode/sass-resources-loader)
 
 Inspect the npm package.json for smaller, ancillary tools
 
@@ -36,52 +36,56 @@ Onboarded team members will then simply need to run `npm install` after cloning 
 ## Directory Structure
 
 ```bash
+src
 ├── assets
 │   ├── fonts
 │   ├── images
 │   └── svg
 ├── components
-│   └── avatar
-│       ├── avatar.js
-│       ├── avatar.scss
-│       └── avatar.test.js
+│   └── <component>
+│       ├── <component>.js
+│       ├── <component>.scss
+│       └── <component>.test.js
 ├── constants
-│   └── appConstants.js
+│   └── <name>Constants.js
 ├── containers
-│   └── profile
-│       ├── profile-container.scss
-│       ├── profileContainer.js
-│       └── profileContainer.test.js
+│   └── <container>
+│       ├── <container>-container.scss
+│       ├── <container>Container.js
+│       └── <container>Container.test.js
 ├── favicon.png
 ├── index.html
 ├── redux
 │   ├── rootReducer.js
 │   ├── store.js
-│   └── user
-│       ├── userActions.js
-│       ├── userReducer.js
-│       └── user.test.js
+│   └── <duck>
+│       ├── <duck>Actions.js
+│       ├── <duck>Reducer.js
+│       └── <duck>.test.js
 ├── services
 │   ├── axiosInstance.js
-│   ├── profile.js
+│   ├── <service>.js
 ├── styles
-│   ├── _variables.scss
+│   ├── resources
+│   │   ├── _0variables.scss
+│   │   └── _1mixins.scss
 │   └── index.scss
 ├── utils
 │   ├── createReducer.js
-│   ├── phoneFormatter.js
-│   └── phoneFormatter.test.js
+│   ├── <util>.js
+│   └── <util>.test.js
 └── views
-    └── home
-        ├── home.js
-        └── home.scss
+    └── <view>
+        ├── <view>.js
+        └── <view>.scss
 ```
 
 ## Available Scripts
 
-* `npm run start` runs the app locally in development mode ...
+* `npm run start` runs the app locally in development mode
 * `npm run dist` builds the app for distribution to the `/dist` folder
-* `npm run test` kicks off Jest
+* `npm run test` runs standard and then jest
+* `npm run lint` runs standard
 * Update Gantry: (re)downloads this repo as an npm package and merges its package.json with this project's package.json
 * Install Robits: downloads `react-robits` as an npm repo and merges its package.json with this project's package.json
 * Update Robits: (re)downloads `react-robits` as an npm package and merges its package.json with this project's package.json

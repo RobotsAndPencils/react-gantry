@@ -199,7 +199,7 @@ if (argv.mode === 'production') {
 ```
 Here we initialize [the plugin](https://github.com/webpack-contrib/mini-css-extract-plugin) that at the time of this writing is set to [replace the `extract-text-plugin`](https://github.com/webpack-contrib/extract-text-webpack-plugin/issues/701#issuecomment-371116830) for handling CSS. Note that we only initialize this plugin if we are in production mode.
 
-### Jest Configuration
+# Jest Configuration
 Our Jest Config is inside the `package.json`.
 ```json
   "jest": {
@@ -220,13 +220,13 @@ Our Jest Config is inside the `package.json`.
   }
 ```
 
-#### moduleNameWrapper
+### `moduleNameWrapper`
 Since we're importing our `.scss` and `.svg` files, Jest tries to run them as javascript, which ends poorly. Jest has a config option [moduleNameMapper](https://facebook.github.io/jest/docs/en/configuration.html#modulenamemapper-object-string-string) that allows us to mock files based on their filename (regex).
 * We use [identity-object-proxy](https://github.com/keyanzhang/identity-obj-proxy) to turn our imported stylesheet lookups into normal strings. (This was part of the jest recommended configuration [for css modules](https://facebook.github.io/jest/docs/en/webpack.html#mocking-css-modules)). Basically it takes our `<div className={styles.someClass}>` and converts that styles object to return just a string `<div className="someClass">`, instead of whatever css modules does normally.
 * We have a custom `fileMock.js` for external svgs. This fileMock just returns a string `"file"` as it is unlikely that we'll be needing to test the contents of our external svgs in any unit tests.
   * It is likely that any static assets we import will need to be added to this regex.
 
-#### transform
+### `transform`
 Jest's [transform](https://facebook.github.io/jest/docs/en/configuration.html#transform-object-string-string) config option lets us apply file transforms to matched filenames. By default `babel-jest` would be run to convert our js files from the ES2017+ syntax back down to vanilla js.
 
 However, we need to teach jest how to handle our inline imported SVGs, which is done in the `"^(?!.*\\.(js|jsx|mjs|css|json)$)": "<rootDir>/config/fileTransform.js"` line. Since we overwrite the default Transform object to add that, we need to add `babel-jest` back in manually.
@@ -260,10 +260,10 @@ This was taken from [Create-react-app's config](https://github.com/facebook/crea
 We tell jest to ignore node_modules when it considers if it should apply our transformations.
 
 
-### Enzyme
+# Enzyme
 Enzyme makes it easier to assert, manipulate, and traverse React Components' output. It provides an API that seeks to mimick jQuery's DOM manipulation api.
 
-We use all the defaults for enzyme, which we initialize in our jest setupFiles:
+We use all the defaults for enzyme, which we initialize in our jest setupFiles configuration option inside package.json:
 ```json
 "setupFiles": [
   "<rootDir>/config/setupTests.js"
