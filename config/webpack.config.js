@@ -2,14 +2,14 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
 module.exports = (env, argv) => {
-  let scssLoaders = [
+  let stylingLoaders = (modularize = true) => [
     /* The css-loader does two things for us: Enables CSS Modules and handles
      * our css @imports & url()s as if they were js imports or require()s
      */
     {
       loader: 'css-loader',
       options: {
-        modules: true, // Enables CSS Modules spec
+        modules: modularize, // Enables CSS Modules spec
         importLoaders: 3, // Tells CSS Loader how many loaders need to run for all @imported css files
         localIdentName: '[name]__[local]', // Provides the format for the CSS Modules output.
         sourceMap: argv.mode !== 'production' // Augment any sourcemaps from previous loaders if we aren't in production
@@ -51,18 +51,24 @@ module.exports = (env, argv) => {
   /* The last step in our scss Loader stack is dependant on the environment from webpack's
    * argv.mode, which we get because we export a function instead of an object.
    */
-  if (argv.mode === 'production') {
-    /* In Production mode, add the loader from the plugin that extracts our css into a css file,
-     * then puts that css file's reference in our html file.
-     */
-    scssLoaders.unshift(MiniCssExtractPlugin.loader)
-  } else {
-    /* Otherwise for the sake of speed, throw all our css into a <style> tag in the head
-     * with the style-loader.
-     */
-    scssLoaders.unshift({
-      loader: 'style-loader'
-    })
+  let applyStylingLoaders = (modularize) => {
+    let loaders = stylingLoaders(modularize)
+
+    if (argv.mode === 'production') {
+      /* In Production mode, add the loader from the plugin that extracts our css into a css file,
+       * then puts that css file's reference in our html file.
+       */
+      loaders.unshift(MiniCssExtractPlugin.loader)
+      return loaders
+    } else {
+      /* Otherwise for the sake of speed, throw all our css into a <style> tag in the head
+       * with the style-loader.
+       */
+      loaders.unshift({
+        loader: 'style-loader'
+      })
+      return loaders
+    }
   }
 
   let plugins = [
@@ -157,10 +163,17 @@ module.exports = (env, argv) => {
         },
         /* This is the big one. To condense the config file I took the loaders out of the rule
         * itself. (See above)
+        * node_modules .scss files will not be modularized, since the JS-applied classes won't be
         */
         {
           test: /\.scss$/,
-          use: scssLoaders
+          use: applyStylingLoaders(),
+          exclude: /node_modules/
+        },
+        {
+          test: /\.scss$/,
+          use: applyStylingLoaders(false),
+          include: /node_modules/
         }
       ]
     },
