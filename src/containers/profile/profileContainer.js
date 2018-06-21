@@ -1,11 +1,11 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import PropTypes from 'prop-types'
-import userActions from '../../redux/user/userActions'
+import userActions from 'redux/user/userActions'
 import styles from './profile-container.scss'
-import Avatar from '../../components/avatar/avatar'
-import Gear from '../../assets/svg/repairing-service.svg'
-import gearSrc from '../../assets/svg/repairing-service.svg?external'
+import Avatar from 'components/avatar/avatar'
+import Gear from 'assets/svg/repairing-service.svg'
+import gearSrc from 'assets/svg/repairing-service.svg?external'
 
 export class Profile extends React.Component {
   getProfileDetails = () => {

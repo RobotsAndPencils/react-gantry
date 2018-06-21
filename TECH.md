@@ -2,6 +2,16 @@
 
 We use one file for both Production and Development webpack setups because of webpack v4's [new `--mode` flag](https://medium.com/webpack/webpack-4-mode-and-optimization-5423a6bc597a). I followed [this tutorial](https://www.valentinog.com/blog/webpack-4-tutorial/) to get started with a basic webpack v4 config file.
 
+### Resolve
+```js
+resolve: {
+  modules: ['src', 'node_modules']
+},
+```
+Webpack's [`resolve` config](https://webpack.js.org/configuration/resolve/#resolve-alias) lets us tell it to look for absolute paths as if they were paths from `/src`.
+
+## Module
+
 Webpack's config maps different `tests` to different loaders, where the tests deal with filenames and match them with regex patterns. Each rule tests one thing and then uses the loader setup defined to handle that file type.
 
 ### JS
@@ -64,8 +74,8 @@ However, if an SVG is imported with a [resourceQuery](https://webpack.js.org/con
 #### Example SVG imports
 
 ```js
-import Crown from '../../assets/svg/crown.svg' // Will create a <Crown /> react component
-import crown from '../../assets/svg/crown.svg?external' // Will use the file loader
+import Crown from 'assets/svg/crown.svg' // Will create a <Crown /> react component
+import crown from 'assets/svg/crown.svg?external' // Will use the file loader
 // ...
 
 <Crown className={styles.crownBlue} /> // applies the className to the <svg> element and can thus manipulate the contents

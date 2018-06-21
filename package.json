@@ -75,6 +75,7 @@
     ]
   },
   "jest": {
+    "moduleDirectories": ["node_modules", "src"],
     "moduleNameMapper": {
       "^.+\\.s?css$": "identity-obj-proxy",
       "^.+\\.svg\\?external$": "<rootDir>/config/fileMock.js"

@@ -96,6 +96,12 @@ module.exports = (env, argv) => {
     output: {
       publicPath: '/'
     },
+    /* This allows us to import things with absolute paths based on /src
+     * For example: import SomeComponent from 'components/someComponent'
+     */
+    resolve: {
+      modules: ['src', 'node_modules']
+    },
     module: {
       rules: [
         /* This will make the babel-loader handle all .js files. We have set up two presets in
