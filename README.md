@@ -94,6 +94,7 @@ src
 
 Gantry has a purposefully slimmer webpack configuration than some other starter kits to make it easier to extend without wondering what all of the individual loaders and plugins do, whether they're being used, or if they're even necessary. Some key points of our webpack configuration are below, see the TECH.md file for the full walkthrough.
 
+* Importing absolute paths are treated as if they start in `/src` or `/node_modules`.
 * JS is handled by babel, which is configured in the .babelrc file in the root of the project.
 * SCSS Modules with sass-resources-loader are pre-configured to use the `./styles/resources` directory to auto import the files there.
 * SCSS Modules is set up with source maps disabled for production mode.

@@ -1,4 +1,4 @@
-// import { getSkillsData } from '../../services/profile'
+// import { getSkillsData } from 'services/profile'
 import { sampleNames, sampleSkills } from '../../../testing/stubs'
 
 /* Action Type Constants */
