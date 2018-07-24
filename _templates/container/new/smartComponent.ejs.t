@@ -1,17 +1,13 @@
 ---
 to: src/containers/<%= h.inflection.camelize(name, true) %>/<%= h.inflection.camelize(name, true) %>Container.js
 ---
-<% if(locals.functional){ -%>
 import React from 'react'
-<% } else { -%>
-import React, {Component} from 'react'
-<% } -%>
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 <% if(locals.duck){ -%>
-import {actionCreators} from '../../redux/<%= duck %>'
+import <%= duck %>Actions from '../../redux/<%= duck %>/<%= duck %>Actions'
 <% }else{ -%>
-import {actionCreators} from '../../redux/duck'
+import duckActions from '../../redux/duck/duckActions'
 <% } -%>
 import styles from './<%= h.inflection.dasherize(h.inflection.underscore(name)) %>-container.scss'
 
@@ -24,7 +20,7 @@ function <%= h.inflection.camelize(name) %> (props) {
   )
 }
 <% } else { -%>
-export class <%= h.inflection.camelize(name) %> extends Component {
+export class <%= h.inflection.camelize(name) %> extends React.Component {
   render () {
     return (
       <div className={styles.<%= h.inflection.camelize(name, true) %>Wrapper}>
@@ -59,20 +55,16 @@ const mapStateToProps = (state, ownProps) => ({
 <% if(locals.document){ -%>
 /**
  * Maps redux action dispatches to props that our contained component
- * can use.
+ * can use. Accepts both an Object or a Function.
+ * If an Object, all entries are automatically wrapped in dispatch
+ * If a function the parameters provided are:
  *
  * @param {any} dispatch `connect` supplies us with dispatch so we can call redux actions
  * @param {Object} ownProps
  */
 <% } -%>
-const mapDispatchToProps = (dispatch, ownProps) => ({
-  quack: () => {
-<% if(locals.duck){ -%>
-    dispatch(actionCreators.simpleQuack())
-<% }else{ -%>
-    dispatch(actionCreators.simpleQuack())
-<% } -%>
-  }
-})
+const mapDispatchToProps = {
+  quack: <% locals.duck ? locals.duck + 'Actions.simpleQuack' : 'duckActions.simpleQuack' %>
+}
 
 export default connect(mapStateToProps, mapDispatchToProps)(<%= h.inflection.camelize(name) %>)
