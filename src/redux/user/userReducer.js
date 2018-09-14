@@ -1,5 +1,5 @@
 import createReducer from 'utils/createReducer'
-import {types} from './userActions'
+import { types } from './userActions'
 
 /* State Shape
 {

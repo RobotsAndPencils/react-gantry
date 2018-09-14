@@ -1,5 +1,5 @@
 import React from 'react'
-import {shallow} from 'enzyme'
+import { shallow } from 'enzyme'
 import Avatar from './avatar'
 
 describe('with a name prop', () => {

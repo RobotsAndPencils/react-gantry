@@ -1,6 +1,6 @@
 import React from 'react'
-import {shallow} from 'enzyme'
-import {Profile} from './profileContainer'
+import { shallow } from 'enzyme'
+import { Profile } from './profileContainer'
 
 describe('with a name prop', () => {
   const randomName = jest.fn()
