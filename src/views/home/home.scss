@@ -1,3 +1,15 @@
 .homeRoute {
-  background-color: $primaryColor;
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: repeat(12, [col-start] 1fr);
+  grid-gap: 10px;
+
+  > * {
+    grid-column: col-start / span 12;
+  }
+
+  header {
+    margin: auto;
+    text-align: center;
+  }
 }
