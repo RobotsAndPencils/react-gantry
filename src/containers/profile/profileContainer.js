@@ -22,15 +22,15 @@ export class Profile extends React.Component {
       <div className={styles.profile}>
         <figure className={styles.profileCard}>
           <figcaption>
-            {this.props.name}
             <Gear className={styles.profileIcon} />
+            {this.props.name}
             <img src={gearSrc} className={styles.profileIcon} />
           </figcaption>
           <Avatar name={this.props.name} />
           <Avatar name={this.props.name} set={2} />
           <Avatar name={this.props.name} set={3} />
         </figure>
-        <button onClick={this.getProfileDetails}>Give me a Name!</button>
+        <button className={styles.primary} onClick={this.getProfileDetails}>onClick Example</button>
         <h2>Skills</h2>
         {
           this.props.skills.map((skill) => {

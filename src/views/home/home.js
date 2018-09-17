@@ -6,8 +6,10 @@ class HomeRoute extends React.Component {
   render () {
     return (
       <div className={styles.homeRoute}>
-        <h1>Hello World!</h1>
-        <p>This is the Home Route</p>
+        <header>
+          <h1>Hello World!</h1>
+          <p>This is the Home Route</p>
+        </header>
         <Profile />
       </div>
     )
