@@ -7,7 +7,9 @@
     "start": "webpack-dev-server --mode development --open --config config/webpack.config.js",
     "dist": "npx webpack --config config/webpack.config.js --mode production",
     "test": "standard && jest",
-    "lint": "standard"
+    "lint": "standard",
+    "install-robits": "npm install --save git+https://github.com/RobotsAndPencils/react-robits.git",
+    "eject-robits": "node ./node_modules/react-robits/ejection-script"
   },
   "repository": {
     "type": "git",
