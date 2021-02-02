@@ -1,0 +1,46 @@
+$font-weight-light: 300;
+$font-weight-regular: 400;
+$font-weight-medium: 500;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+
+$featured-font: 'Montserrat', Roboto, 'Helvetica Neue', 'HelveticaNeue-Light',
+  'Helvetica Neue Light', -apple-system, BlinkMacSystemFont, Arial, sans-serif !default;
+$body-font: 'Montserrat', 'Helvetica Neue', 'HelveticaNeue-Light', 'Helvetica Neue Light',
+  -apple-system, BlinkMacSystemFont, Arial, sans-serif !default;
+$headings-font-family: $featured-font !default;
+
+$font-size-base: 1.6rem !default;
+$font-size-lg: 1.8rem !default;
+$font-size-sm: 1.4rem !default;
+
+$line-height-base: 2.4 !default;
+$line-height-lg: 2.4 !default;
+$line-height-sm: 2.4 !default;
+
+$headings-margin-bottom: 1.2rem !default;
+$headings-font-weight: $font-weight-regular !default;
+$headings-color: $black !default;
+$headings-letter-spacing: 0 !default;
+
+$h1-font-size: 3.4rem !default;
+$h2-font-size: 2.8rem !default;
+$h3-font-size: 2.4rem !default;
+$h4-font-size: 1.8rem !default;
+
+$h1-line-height: 4.1rem !default;
+$h2-line-height: 3.4rem !default;
+$h3-line-height: 2.8rem !default;
+$h4-line-height: 2.4rem !default;
+
+$paragraphs-margin-bottom: 1.88rem !default;
+
+$small-font-size: 1.2rem !default;
+
+$blockquote-font-size: 2.4rem !default;
+$blockquote-footer-font-size: 1.8rem !default;
+$blockquote-margin-bottom: 1.2rem !default;
+
+@mixin letterspacing($units) {
+  letter-spacing: ($units/1000 * 1rem);
+}

@@ -1,0 +1,23 @@
+@function fluidCalc($minSize, $maxSize, $minViewport, $maxViewport) {
+  // without "px"
+  // refernce: https://www.madebymike.com.au/writing/fluid-type-calc-examples/
+  @return calc(
+    #{$minSize}px + (#{$maxSize} - #{$minSize}) * (100vw - #{$minViewport}px) /
+      (#{$maxViewport} - #{$minViewport})
+  );
+}
+
+// Color contrast
+@function color-yiq($color) {
+  $r: red($color);
+  $g: green($color);
+  $b: blue($color);
+
+  $yiq: (($r * 299) + ($g * 587) + ($b * 114)) / 1000;
+
+  @if ($yiq >= 150) {
+    @return darken($color, 65);
+  } @else {
+    @return #fff;
+  }
+}

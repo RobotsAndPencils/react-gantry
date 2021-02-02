@@ -1,0 +1,28 @@
+// Links
+$link-color: $primary !default;
+$link-decoration: underline !default;
+$link-hover-color: darken($link-color, 15%) !default;
+$link-hover-decoration: none !default;
+
+// Components
+$border-width: 1px !default;
+$border-radius: 0.9rem !default;
+$border-radius-lg: 1.2rem !default;
+$border-radius-sm: 0.6rem !default;
+
+$hr-border-color: rgba($black, 0.2) !default;
+$hr-border-width: $border-width !default;
+$hr-margin-y: 1.8rem !default;
+
+// Z-index master list
+//
+// Warning: Avoid customizing these values. They're used for a bird's eye view
+// of components dependent on the z-axis and are designed to all work together.
+
+$zindex-dropdown: 1000 !default;
+$zindex-sticky: 1020 !default;
+$zindex-fixed: 1030 !default;
+$zindex-modal-backdrop: 1040 !default;
+$zindex-modal: 1050 !default;
+$zindex-popover: 1060 !default;
+$zindex-tooltip: 1070 !default;

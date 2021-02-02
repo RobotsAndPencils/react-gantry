@@ -1,1 +1,1 @@
-Images of all varieties co-exist here.
+Raster images live here.

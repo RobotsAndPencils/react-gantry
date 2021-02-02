@@ -1,1 +1,1 @@
-This is where Fonts go.
+This is where Font files go, if needed
