@@ -10,7 +10,7 @@ This repo is a minimal starter kit born out of recent React projects here at R&P
 - Linting & Formatting:
   - [Prettier-Standard](https://github.com/sheerun/prettier-standard) at the command line, with a pre-commit hook for safe-guarding
   - Based on some compelling arguments from [the community](https://medium.com/@nikgraf/why-you-should-enforce-dangling-commas-for-multiline-statements-d034c98e36f8) and R&P Robots alike, we've implemented a small override for the `comma-dangle`
-  - Due to that override, we'ved pulled in [eslint-config-standard](https://github.com/standard/eslint-config-standard) so that we can properly extend [Standard Rules](https://github.com/standard/standard) with that comma override to allow the usage of ESLint plugins within IDE's for proper code highlighting (ie. - base Standard plugins will highlight the comma complaint, this gets around that)
+  - Due to that override, we've pulled in [eslint-config-standard](https://github.com/standard/eslint-config-standard) so that we can properly extend [Standard Rules](https://github.com/standard/standard) with that comma override to allow the usage of ESLint plugins within IDE's for proper code highlighting (ie. - base Standard plugins will highlight the comma complaint, this gets around that)
 - Testing: [Jest](https://facebook.github.io/jest/)
 - CSS: [CSS Modules](https://create-react-app.dev/docs/adding-a-css-modules-stylesheet) + [Sass Resources Loader](https://github.com/shakacode/sass-resources-loader)
 - `.npmrc` file that limits NPM package versioning to _wild hotfixes_ to decrease the likelihood of breaking changes between machines introduced by installs across releases
