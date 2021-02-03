@@ -1,0 +1,8 @@
+// Easings
+$ease-in-out-circ: cubic-bezier(0.27, 0.01, 0.38, 1.06);
+$ease-out-circ: cubic-bezier(0.075, 0.82, 0.165, 1);
+
+// Transitions
+$transition-duration: 300ms;
+$transition-base: all $transition-duration $ease-in-out-circ !default;
+$transition-fade: opacity 200ms ease-in-out !default;

@@ -1,0 +1,175 @@
+// import CDN fonts here
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&display=swap');
+
+:global {
+  html {
+    box-sizing: border-box;
+    font-size: 10px; // reset for easy REM calculatins
+  }
+
+  body {
+    padding: 0;
+    margin: 0;
+    font-family: $body-font;
+    font-size: $font-size-base;
+    font-weight: $font-weight-regular;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  button {
+    cursor: pointer;
+  }
+
+  // override elements that don't inherit body styles in Chrome and Safari
+  button,
+  input,
+  select,
+  textarea {
+    font-family: inherit;
+  }
+
+  // hack for transparent background when autofilled in Chrome or Safari
+  // https://css-tricks.com/snippets/css/change-autocomplete-styles-webkit-browsers/
+  input {
+    &:-webkit-autofill,
+    &:-webkit-autofill:hover,
+    &:-webkit-autofill:focus {
+      -webkit-text-fill-color: $white;
+      -webkit-box-shadow: 0 0 0px 1000px transparent inset;
+      transition: background-color 5000s ease-in-out 0s;
+    }
+  }
+
+  code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+  }
+  *,
+  *:before,
+  *:after {
+    box-sizing: inherit;
+  }
+  svg {
+    height: auto;
+    fill: currentColor;
+  }
+
+  a,
+  .link {
+    color: $link-color;
+    text-decoration: $link-decoration;
+    cursor: pointer;
+
+    @include hover {
+      color: $link-hover-color;
+      text-decoration: $link-hover-decoration;
+    }
+  }
+
+  b,
+  strong {
+    font-weight: $font-weight-bold;
+  }
+
+  //
+  // Typography
+  //
+
+  // Remove top margins from headings
+  //
+  // By default, `<h1>`-`<h6>` all receive top and bottom margins. We nuke the top
+  // margin for easier control within type scales as it avoids margin collapsing.
+  h1,
+  h2,
+  h3,
+  h4 {
+    margin-top: 0;
+  }
+
+  // Ensure elements that are not headings are properly
+  // displayed as block level elements.
+  .h1,
+  .h2,
+  .h3,
+  .h4 {
+    display: block;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  .h1,
+  .h2,
+  .h3,
+  .h4 {
+    margin-bottom: $headings-margin-bottom;
+    font-family: $headings-font-family;
+    font-weight: $headings-font-weight;
+    color: $headings-color;
+    letter-spacing: $headings-letter-spacing;
+  }
+
+  h1,
+  .h1 {
+    font-size: $h1-font-size;
+    line-height: $h1-line-height;
+  }
+
+  h2,
+  .h2 {
+    font-size: $h2-font-size;
+    line-height: $h2-line-height;
+  }
+
+  h3,
+  .h3 {
+    font-size: $h3-font-size;
+    line-height: $h3-line-height;
+  }
+
+  h4,
+  .h4 {
+    font-size: $h4-font-size;
+    line-height: $h4-line-height;
+  }
+
+  p {
+    margin-bottom: $paragraphs-margin-bottom;
+  }
+
+  small,
+  .small {
+    font-size: $small-font-size;
+    font-family: $featured-font;
+    text-transform: uppercase;
+    color: $tertiary;
+  }
+
+  //
+  // Misc
+  //
+
+  hr {
+    margin-top: $hr-margin-y;
+    margin-bottom: $hr-margin-y;
+    border-top: $hr-border-width solid $hr-border-color;
+  }
+
+  .blockquote {
+    margin-bottom: $blockquote-margin-bottom;
+    font-size: $blockquote-font-size;
+  }
+
+  .blockquote-footer {
+    font-size: $blockquote-footer-font-size;
+  }
+
+  .sr-only {
+    @include sr-only;
+  }
+
+  //
+  // App Globals Beyond This Point
+  //
+} // end :global

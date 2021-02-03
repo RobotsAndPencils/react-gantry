@@ -1,0 +1,28 @@
+$white: #fff !default;
+$gray-100: #efefef !default;
+$gray-200: #d3d3d3 !default;
+$gray-300: #c9c9c9 !default;
+$gray-400: #aaaaaa !default;
+$gray-500: #838383 !default;
+$gray-600: #565656 !default;
+$gray-700: #252422 !default;
+$gray-800: #111111 !default;
+$gray-900: #080808 !default;
+$black: #000 !default;
+
+// The yiq lightness value that determines when the lightness of color changes from "dark" to "light". Acceptable values are between 0 and 255.
+$yiq-contrasted-threshold: 150 !default;
+
+// Customize the light and dark text colors for use in our YIQ color contrast function.
+$yiq-text-dark: $gray-900 !default;
+$yiq-text-light: $white !default;
+
+$primary: #ff0e25 !default;
+$secondary: #d8ab70 !default;
+$tertiary: $gray-700 !default;
+$success: #45f3c4 !default;
+$warning: #ffc040 !default;
+$danger: #ff794f !default;
+$light: $gray-200 !default;
+$dark: $gray-900 !default;
+$info: $light !default;

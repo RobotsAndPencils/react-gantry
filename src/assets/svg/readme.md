@@ -1,1 +1,1 @@
-All manner of svgs big and small hang out here.
+SVG images live here (icons and other)
