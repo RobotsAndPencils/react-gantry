@@ -4,6 +4,8 @@
 
 This repo is a minimal starter kit born out of recent React projects here at R&P. It combines some basic configurations, based on lessons learned, so that you can quickly get up and running in a way that aligns with existing projects. Beyond that, the rest is up to you!
 
+**Note:** this repository is configured so that you can use it as a template for newly generated repo's. Just click the green "Use this template" at the top. [More info here.](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/creating-a-repository-from-a-template)
+
 ## Configuration
 
 - Uses [create-react-app](https://create-react-app.dev/) with [rescripts](https://github.com/harrysolovay/rescripts) for the ability to make _minor tweaks_ to the webpack config without having to 'eject' and open that can of worms
