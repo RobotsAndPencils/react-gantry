@@ -10,6 +10,7 @@
         "imports": "always-multiline",
         "objects": "always-multiline"
       }
-    ]
+    ],
+    "multiline-ternary": ["error", "never"]
   }
 }

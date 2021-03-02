@@ -5,6 +5,5 @@
   "singleQuote": true,
   "semi": false,
   "spaceBeforeFunctionParen": true,
-  "alignTernaryLines": false,
   "trailingComma": "es5"
 }
